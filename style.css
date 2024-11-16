@@ -1,0 +1,275 @@
+:root {
+    --soft-orange:hsl(35, 77%, 62%);
+    --soft-red: hsl(5, 85%, 63%);
+    --off-white: hsl(36, 100%, 99%);
+    --grayish-blue: hsl(233, 8%, 79%);
+    --dark-grayish-blue: hsl(236, 13%, 42%);
+    --very-dark-blue: hsl(240, 100%, 5%);
+}
+/* store the font family in variables 
+change from px to rem*/
+
+@font-face  {
+    font-family: 'Inter-Bold';
+    src: url('Inter-Bold.ttf');
+}
+
+@font-face  {
+    font-family: 'Inter-ExtraBold';
+    src: url('Inter-ExtraBold.ttf');
+}
+
+@font-face  {
+    font-family: 'Inter-Regular';
+    src: url('Inter-Regular.ttf');
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+}
+
+.container {
+    background: #fff;
+    padding: 0 5%;
+    width: 100%;
+    font-family: 'Inter-Regular';
+    padding-bottom: 5em;
+}
+
+.cover {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    display: none;
+}
+
+
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 0;
+}
+
+.header__logo {
+    width: 50px;
+}
+
+nav {
+   min-height: 100vh;
+   position: fixed;
+   right: 0;
+   top: 0;
+   width: 75%;
+   background: #fff;
+   z-index: 3;
+   padding-top: 50%;
+   padding-left: 1.5em;
+   display: none;
+   transition: display 1s;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 2em;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--very-dark-blue);
+    font-family: 'Inter-Regular';
+    font-size: 22.5px;
+}
+
+nav ul li a:hover {
+    color: var(--soft-orange);
+}
+
+.close-img {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+}
+
+.section-1__img-mobile {
+    max-width: 100%;
+}
+
+.section-1__img-desktop {
+    display: none;
+    max-width: 100%;
+}
+
+h1 {
+    color: var(--very-dark-blue);
+    font-family: 'Inter-ExtraBold';
+    font-size: 3em;
+    line-height: 1em;
+}
+
+.article1 {
+    margin-top: 1.3em;
+    margin-bottom: 4em;
+}
+
+.article1 p {
+    color: var(--dark-grayish-blue);
+    margin: 1em 0;
+    font-size: 0.9rem;
+}
+
+.article1 button {
+    background: var(--soft-red);
+    letter-spacing: 0.5em;
+    width: 50%;
+    text-align: center;
+    padding: 1em 0;
+    border: 0;
+    outline: 0;
+    color: #fff;
+    font-weight: bold;
+}
+
+.section-2 {
+    background: var(--very-dark-blue);
+    color: var(--grayish-blue);
+    padding: 1.5em 1.5em;
+    margin-bottom: 4em;
+}
+
+h2 {
+    color: var(--soft-orange);
+    font-family: 'Inter-Bold';
+}
+
+h3 {
+    color: #fff;
+    margin-bottom: 1em; 
+}
+
+.section-2 div:not(:last-child) {
+    padding: 2em 0;
+    border-bottom: 1px solid var(--grayish-blue);
+}
+
+.section-2 div:last-child {
+    padding-top: 2em;
+}
+
+.section-3 article {
+    display: flex;
+    grid-gap: 1em;    
+}
+
+.section-3__img {
+   width: 30%;
+}
+
+.section-3__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.section-3__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0.5em 0;   
+}
+
+h4 {
+    font-size: 2rem;
+    font-family: 'Inter-Bold';
+    color: var(--grayish-blue);
+    
+}
+
+h5 {
+    font-size: 1.1rem;
+    font-family: 'Inter-Bold';
+}
+
+.section-3 article {
+    margin-bottom: 2em;
+}
+
+@media(min-width: 800px){
+    .section-1__img-desktop {
+        display: block;
+    }
+    
+    .section-1__img-mobile {
+        display: none;
+    }
+    
+}
+
+@media(min-width: 850px){
+    
+    
+    nav {
+   min-height: auto;
+   width: auto;
+   padding-top: auto;
+   padding-left: 1.5em;
+   position: relative;
+   display: flex;
+}
+    
+    nav ul {
+    flex-direction: row;
+    grid-gap: 2em;
+}
+    
+    .close-img {
+        display: none;
+    }
+    
+    .header__hamburger {
+        display: none;
+    }
+    
+    
+    .container-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 1em;
+    }
+    
+    .section-1 {
+        grid-column: span 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    .article1 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1.5em;
+    }
+    
+    .article1 p {
+    margin: 1em 0;
+    margin-top: 0em;
+    }
+
+    .section-3 {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+        grid-gap: 1em;
+    }
+
+}
